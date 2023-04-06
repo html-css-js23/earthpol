@@ -1,1 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!--WeHateFrickingSchool23-->
+	<title>School Files</title>
+	<script>
+		function checkPassword() {
+			var password = document.getElementById("password").value;
+			if(password == "IHateMyLife:(") {
+				document.getElementById("passwordArea").style.display = "none";
+				alert("Hi, user! Thanks for using this calculator.")
+				document.title = "Notes";
+				document.getElementById("emg").style.display = "block";
+			}
+			else {
+				alert("Incorrect password! Try again or die :)");
+			}
+		}
 
+		window.onload = function() {
+			document.getElementById("calculatorArea").style.display = "none";
+			document.getElementById("emg").style.display = "none";
+		}
+	</script>
+	<style>
+		#passwordArea {
+			margin: auto;
+			width: 50%;
+			padding: 10px;
+			border: 1px solid black;
+			text-align: center;
+		}
+		#calculatorArea {
+			margin: auto;
+			width: 50%;
+			padding: 10px;
+			border: 1px solid black;
+			text-align: center;
+		}
+		input[type="text"], input[type="password"], button {
+			margin: 10px;
+			padding: 5px;
+			border-radius: 5px;
+			border: 1px solid black;
+			font-size: 16px;
+		}
+		button {
+			background-color: #4CAF50;
+			color: white;
+		.uwu {
+			background-color: #ff0000;
+			color: white;
+			text-align: center;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div id="passwordArea">
+		<h2>Enter Password to Access School stuff</h2>
+		<input type="password" id="password" name="password">
+		<button type="button" onclick="checkPassword()">Submit</button>
+	</div>
+	<div id="calculatorArea">
+		<h2>Calculator</h2>
+		<input type="text" id="num1" name="num1"> +
+		<input type="text" id="num2" name="num2"> =
+		<input type="text" id="result" name="result" readonly>
+		<br>
+		<button type="button" onclick="add()">Add</button>
+		<button type="button" onclick="clearFields()">Clear</button>
+	</div>
+	<button type="button" id="emg" name="classroom" onclick="window.location.href='https://docs.google.com/document/d/1VWbhKEk_qMz4YZRd3HUdJXeYaxlgZ3rtirEABvX0elg/edit?usp=sharing';" class="uwu">Notes</button>
+	<script>
+		function add() {
+			var num1 = parseFloat(document.getElementById("num1").value);
+			var num2 = parseFloat(document.getElementById("num2").value);
+			if(isNaN(num1) || isNaN(num2)) {
+				alert("Please enter valid numbers!");
+			}
+			else {
+				var result = num1 + num2;
+				document.getElementById("result").value = result;
+			}
+		}
+
+		function clearFields() {
+			document.getElementById("num1").value = "";
+			document.getElementById("num2").value = "";
+			document.getElementById("result").value = "";
+		}
+	</script>
+</body>
+</html>
